@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+
+/* ▶ HERO FIXES & STYLING ◀ */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;                    /* hide any white glitch below */
+  background: url('https://source.unsplash.com/1600x900/?coding,tech')
+              center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: rgba(10,25,47,0.7);
+  z-index: 1;
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  flex: 1;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; padding: 0 1rem;
+}
+/* Heading */
+.hero-content h1 {
+  font-family: 'Poppins',sans-serif;
+  font-size: 3.5rem; line-height: 1.1;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+  background-size: 200% 200%;
+  -webkit-background-clip: text; color: transparent;
+  animation: gradientMove 5s ease infinite;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+@keyframes gradientMove {
+  0%,100%{ background-position:0% 50%; }
+  50%    { background-position:100% 50%; }
+}
+/* Glass card */
+.hero-content {
+  max-width: 600px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px; padding: 2rem;
+  box-shadow: 0 8px 32px rgba(10,25,47,0.4);
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0; transform: translateY(20px);
+}
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-content p {
+  margin: 1rem 0 2rem;
+  color: #fff; font-size: 1.1rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+/* CTA */
+.cta-btn {
+  display: inline-block;
+  padding: .75rem 1.5rem;
+  background: #00d2ff; color: #fff;
+  border-radius: 4px; font-weight: bold;
+  animation: pulse 2s infinite; text-decoration: none;
+}
+@keyframes pulse {
+  0%,100%{ transform: scale(1); }
+  50%    { transform: scale(1.05); }
+}
+/* Wave */
+.wave-divider {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; line-height: 0;
+}
+.wave-divider svg { width: 100%; height: 80px; display: block; }
+.wave-divider path { fill: #ffffff; }
+/* Floating dots */
+.hero::before {
+  content: '';
+  position: absolute; top:15%; left:10%;
+  width:4px; height:4px; background:rgba(255,255,255,0.15);
+  border-radius:50%;
+  box-shadow:
+    80px 40px rgba(255,255,255,0.15),
+    200px 100px rgba(255,255,255,0.1),
+    400px 150px rgba(255,255,255,0.12);
+  animation: floatDots 10s infinite ease-in-out;
+  z-index:1;
+}
+@keyframes floatDots {
+  0%,100%{ transform: translateY(0); }
+  50%    { transform: translateY(-10px); }
+}
+/* Hamburger transparency fix */
+.hamburger {
+  background: transparent; border: none;
+}
+/* MOBILE fallback */
+@media (max-width: 768px) {
+  .hero { background-attachment: scroll; }
+  .hero-content h1 { font-size: 2.5rem; }
+  .cta-btn { padding: .5rem 1rem; }
+}
+
+/* ▶ “What I Do” INTRO SECTION ◀ */
+.home-intro {
+  padding: 4rem 1rem; background: #f0f4f8; text-align: center;
+}
+.home-intro h2 { font-size: 2.5rem; margin-bottom: 2rem; color: #222; }
+.intro-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1.5rem;
+}
+.intro-cards .card {
+  background: #fff; padding: 2rem; border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform .3s, box-shadow .3s;
+}
+.intro-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.intro-cards h3 { margin-bottom: .5rem; color: #00d2ff; }
+.intro-cards p { color: #555; }
+
+/* ▶ “Featured Projects” PREVIEW ◀ */
+.home-projects {
+  padding: 4rem 1rem; background: #fff; text-align: center;
+}
+.home-projects h2 { font-size: 2.5rem; margin-bottom: 2rem; color: #222; }
+.home-projects .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 1.5rem;
+  max-width: 1000px; margin: auto;
+}
+.home-projects .project-card {
+  background: #f9fafb; padding: 1.5rem; border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform .3s, box-shadow .3s;
+}
+.home-projects .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.home-projects .project-card h3 { margin-bottom: .5rem; color: #3a7bd5; }
+.home-projects .project-card p { margin-bottom: 1rem; color: #555; }
+.home-projects .project-card a {
+  display: inline-block; padding: .5rem 1rem;
+  background: #3a7bd5; color: #fff; border-radius: 4px;
+  text-decoration: none; font-weight: 500;
+  animation: none;
+}
+ .shooting-star {
+      position: absolute;
+      top: -10px;
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, white, rgba(255,255,255,0));
+      opacity: 0.8;
+      z-index: 2;
+      animation: shoot 3s linear infinite;
+    }
+
+    .shooting-star:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .shooting-star:nth-child(2) { left: 30%; animation-delay: 1s; }
+    .shooting-star:nth-child(3) { left: 60%; animation-delay: 2s; }
+    .shooting-star:nth-child(4) { left: 80%; animation-delay: 3s; }
+
+    @keyframes shoot {
+      0% { transform: translateY(0) translateX(0) rotate(45deg); opacity: 0.8; }
+      90% { opacity: 0.1; }
+      100% { transform: translateY(300px) translateX(300px) rotate(45deg); opacity: 0; }
+    }
+    /* ✦ Glowing Stars Background */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 100px 100px;
+  background-position: 0 0, 50px 50px;
+  animation: twinkle 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.9; }
+  50%      { opacity: 0.4; }
+}
+
+/* Shooting Stars */
+.shooting-stars {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: white;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  box-shadow: 0 0 8px rgba(255,255,255,0.9);
+  animation: shoot 5s linear infinite;
+}
+
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  background: repeating-radial-gradient(white 0 2px, transparent 3px 6px);
+  opacity: 0.7;
+  left: -60px;
+  top: 5px;
+  transform: rotate(45deg);
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(800px) translateY(400px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Slightly different delays for variety */
+.shooting-star:nth-child(2) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 2s;
+}
+.shooting-star:nth-child(3) {
+  top: 50%;
+  left: 5%;
+  animation-delay: 4s;
+}
+/* ★ Star Field Background */
+.star-field::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 60px 60px, 120px 120px;
+  background-position: 0 0, 30px 30px;
+  opacity: 0.1;
+  animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.05; }
+  100% { opacity: 0.15; }
+}
+
+/* ★ Shooting Star Setup */
+.shooting-stars {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Base Star Shape */
+.shooting-stars::before,
+.shooting-stars::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(white, #88ccff);
+  box-shadow: 0 0 8px 4px #66d9ff;
+  animation: shootStar 5s linear infinite;
+}
+
+/* Trail */
+.shooting-stars::after {
+  width: 0;
+  height: 0;
+  border: 2px dotted rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  box-shadow:
+    0 0 6px rgba(255,255,255,0.1),
+    0 0 10px rgba(255,255,255,0.2),
+    0 0 14px rgba(255,255,255,0.3);
+  animation: trailCurve 5s linear infinite;
+}
+
+/* Shooting Star Path */
+@keyframes shootStar {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(800px, 400px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Curved Trail Animation */
+@keyframes trailCurve {
+  0% {
+    transform: translate(0, 0) scale(0.8) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(800px, 400px) scale(1.2) rotate(45deg);
+    opacity: 0;
+  }
+}
+.hero {
+  background: linear-gradient(to bottom, #0a0c2a, #0c1a40);
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+

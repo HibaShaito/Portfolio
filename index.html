@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiba Shaito | Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <script src="js/common.js" defer></script>
+  <script src="js/home.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Hiba Shaito</div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-item">Home</a></li>
+        <li class="dropdown">
+          <a href="about.html" class="nav-item">About Me</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html#skills" class="nav-item">Skills</a></li>
+            <li><a href="about.html#education" class="nav-item">Education</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="projects.html" class="nav-item">Projects</a>
+          <ul class="dropdown-menu">
+            <li><a href="projects.html#mobile" class="nav-item">Mobile Apps</a></li>
+            <li><a href="projects.html#web" class="nav-item">Web Apps</a></li>
+            <li><a href="projects.html#game" class="nav-item">Game Dev</a></li>
+            <li><a href="projects.html#ml" class="nav-item">Machine Learning</a></li>
+          </ul>
+        </li>
+         <li><a href="certificates.html" class="nav-item">Certificates</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="stars"></div>
+
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Hi, I’m Hiba Shaito</h1>
+        <p>A passionate CS graduate aspiring to make a difference.</p>
+        <a href="projects.html" class="cta-btn">Explore My Work</a>
+      </div>
+    </div>
+
+    <!-- Shooting Stars -->
+    <div class="shooting-stars">
+      <div class="shooting-star"></div>
+      <div class="shooting-star delay1"></div>
+      <div class="shooting-star delay2"></div>
+      <div class="shooting-star delay3 small"></div>
+      <div class="shooting-star delay4 medium"></div>
+      <div class="shooting-star delay5 large"></div>   
+    </div>
+
+    <div class="wave-divider">
+      <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+        <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#ffffff" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- What I Do -->
+  <section class="home-intro" id="home-intro">
+    <h2>What I Do</h2>
+    <div class="intro-cards">
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>I build responsive, dynamic websites with PHP, HTML/CSS & JavaScript.</p>
+      </div>
+      <div class="card">
+        <h3>Mobile Apps</h3>
+        <p>I create cross‑platform mobile apps using Flutter & Dart.</p>
+      </div>
+      <div class="card">
+        <h3>UX/UI Design</h3>
+        <p>I craft intuitive user experiences with Figma and custom CSS.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="home-projects" id="home-projects">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card" id="mobile">
+        <h3>LifePlanner App</h3>
+        <p>Flutter productivity app for tasks, weather, & notes.</p>
+        <a href="https://github.com/HibaShaito/FinalProject-lifeplanner-MobileApp" target="_blank">View Repo</a>
+      </div>
+      <div class="project-card" id="web">
+        <h3>TaskOrganizer Web</h3>
+        <p>PHP‑based web tool for managing tasks & deadlines.</p>
+        <a href="https://github.com/HibaShaito/TaskOrganizer-Web" target="_blank">View Repo</a>
+      </div>
+      <div class="project-card">
+        <h3>E‑commerce Site</h3>
+        <p>A student project showcasing a basic online store.</p>
+        <a href="https://github.com/HibaShaito/E-commerce-Web" target="_blank">View Repo</a>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>Connect with me:</p>
+    <div class="footer-links">
+      <a href="mailto:hibashaito2@gmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/hiba-shaito-83a32b2ab/" target="_blank">💼 LinkedIn</a>
+      <a href="https://github.com/HibaShaito/" target="_blank">🐙 GitHub</a>
+    </div>
+    <p class="footer-credit">© 2025 Hiba Shaito</p>
+  </div>
+</footer>
+</html>

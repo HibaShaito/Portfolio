@@ -1,0 +1,228 @@
+/* Container spacing */
+/* Projects section background */
+body{
+  background: linear-gradient(to bottom, #0a0c2a, #0c1a40);
+}
+#projects {
+  background: linear-gradient(180deg, #fdfdfd 0%, #f8f8f8 100%);
+  padding: 4rem 1.5rem;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+.section-block {
+
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 3rem;  
+  border-top: 5px solid #ffcc00; 
+  background: #f0f8ff;
+}
+
+
+#projects h2 {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #000000;
+  font-size: 30px;
+}
+
+/* Grid layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card base style */
+.project-card {
+  background: #fffdf1;
+  border-radius: 8px;
+   border-left: 5px solid #ffcc00;
+  overflow: hidden;
+  padding: 1.2rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Subtle hover lift */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Title & description */
+.project-card h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+  color: #222;
+}
+.project-card h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+.project-card h3 a:hover {
+  color: #ff9900;
+}
+
+/* Repo description */
+.project-card p {
+  flex-grow: 1;
+  margin: 0 0 1rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Shimmer “View Repo” button */
+.project-card a {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #ffcc00;
+  color: #1f1f1f;
+  font-weight: 500;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.project-card a:hover {
+  background: #ffd933;
+}
+.project-card a::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: rgba(255,255,255,0.6);
+  transform: skewX(-25deg);
+  transition: left 0.7s ease-out;
+}
+.project-card a:hover::before {
+  left: 125%;
+}
+/* Category Headings */
+#projects h3 {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Emoji/icon spacing (optional) */
+#projects h3::before {
+  font-size: 1.3rem;
+}
+
+/* Space after each section */
+.projects-grid + h3 {
+  margin-top: 4rem;
+}
+
+/* Add extra spacing after final section */
+.projects-grid:last-of-type {
+  margin-bottom: 2rem;
+}
+
+/* Falling stars container */
+.falling-stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* let users click through */
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Star base style */
+.falling-star {
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: 10px;
+  background: #ffcc00;
+  opacity: 0.7;
+  animation: fall linear infinite;
+  border-radius: 50%;
+  box-shadow: 0 0 4px white;
+}
+
+/* Falling animation */
+@keyframes fall {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) scaleX(0.5);
+    opacity: 0;
+  }
+}
+/* Sparkle stars */
+.sparkle-star {
+  position: absolute;
+  top: -20px;
+  font-size: 1rem;
+  color: #ffcc00;
+  opacity: 0.8;
+  animation: sparkle-fall linear infinite;
+  pointer-events: none;
+  text-shadow: 0 0 4px #180156;
+}
+
+@keyframes sparkle-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+/* Star-shape (CSS polygon) */
+.star-shape {
+  position: absolute;
+  top: -30px;
+  width: 12px;
+  height: 12px;
+  background: #ffcc00;
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%,
+    68% 57%, 79% 91%,
+    50% 70%, 21% 91%,
+    32% 57%, 2% 35%, 39% 35%
+  );
+  opacity: 0.9;
+  animation: star-fall linear infinite;
+  box-shadow: 0 0 6px white;
+}
+
+/* Fall animation for shaped stars */
+@keyframes star-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
